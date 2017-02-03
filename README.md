@@ -1,2 +1,2 @@
-# chromium-latest-linux
-Scripts to download and run the latest Linux build of Chromium.
+# chromium-latest-mac
+Scripts to download and copy the latest Mac build of Chromium to `/Applications/Chromium.app`

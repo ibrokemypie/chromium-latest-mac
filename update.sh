@@ -2,7 +2,7 @@
 
 cd $(dirname $0)
 
-LASTCHANGE_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2FLAST_CHANGE?alt=media"
+LASTCHANGE_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Mac%2FLAST_CHANGE?alt=media"
 
 REVISION=$(curl -s -S $LASTCHANGE_URL)
 
@@ -13,9 +13,9 @@ if [ -d $REVISION ] ; then
   exit
 fi
 
-ZIP_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F$REVISION%2Fchrome-linux.zip?alt=media"
+ZIP_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Mac%2F$REVISION%2Fchrome-mac.zip?alt=media"
 
-ZIP_FILE="${REVISION}-chrome-linux.zip"
+ZIP_FILE="${REVISION}-chrome-mac.zip"
 
 echo "fetching $ZIP_URL"
 
@@ -26,6 +26,5 @@ curl -# $ZIP_URL > $ZIP_FILE
 echo "unzipping.."
 unzip $ZIP_FILE
 popd
-rm -f ./latest
-ln -s $REVISION/chrome-linux/ ./latest
-
+rm ./latest-Chromium.app
+ln -s $REVISION/chrome-mac/Chromium.app ./latest-Chromium.app

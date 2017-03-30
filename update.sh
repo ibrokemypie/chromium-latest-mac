@@ -28,5 +28,5 @@ unzip $ZIP_FILE
 popd
 mv $REVISION/chrome-mac/Chromium.app/Contents/MacOS/Chromium $REVISION/chrome-mac/Chromium.app/Contents/MacOS/Chromium2
 cp Chromium $REVISION/chrome-mac/Chromium.app/Contents/MacOS/Chromium
-rm ./latest-Chromium.app
-ln -s $REVISION/chrome-mac/Chromium.app ./latest-Chromium.app
+#rm ./latest-Chromium.app
+#ln -s $REVISION/chrome-mac/Chromium.app ./latest-Chromium.app
